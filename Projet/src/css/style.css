@@ -2,11 +2,15 @@
 */
 .heading-site {
 text-align: center;
-font-family: 'Montserrat', sans-serif;
+font-family: 'Racing Sans One', cursive;
+font-style: italic;
+font-size: 30px;
 }
 
 
+
 /* HEADER */
+
 
 .header {
 	width:100% ;
@@ -19,53 +23,192 @@ font-family: 'Montserrat', sans-serif;
 	top: 0;
 	z-index: 999;
 }
+.header .logo {
+	float: left; 
+	position: absolute;
+	margin-left: 35px;
+	top: 7px;
+	width: 80px;
+}
 
 .header .header-logo {
 	color: #FFFFFF;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Racing Sans One', cursive;
 	float: left; 
-	margin-left: 30px;
+	margin-left: 130px;
+	font-size: 25px;
+	letter-spacing: 2px;
+	position: fixed;
 }
 
 .header .header-menu {
+	font-family: 'Patua One', cursive;
+	letter-spacing: 2px;
 	float: right;
-	margin-right: 30px;
+	margin-right: 0px;
 }
 
 .header .header-menu a {
-	margin-right: 15px;
+	margin-right: 20px;
 	color :#FFFFFF;
 }
 
 .header .header-menu a:hover {
-	color: #3498db
+	background: #3C90C8;
+	padding: 5px 8px; 
+	border-radius: 2px; 
+	transition: 0.5s;
+	text-transform: uppercase;
 }
+
+.header .header-menu button {
+	font-family: 'Patua One', cursive;
+	font-style: italic;
+	letter-spacing: 2px;
+	background-color: #3C90C8;
+	margin-right: 40px;
+	border-radius: 4px; 
+	top: 15px; 
+}
+
+.header .header-menu button:hover {
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+
+
+/*
+SIDE MENU
+*/
+
+/* this is what I used to make the menu button */
+.checkbtn {
+	font-size: 30px;
+	color: #FFFFFF;
+	float: right;
+	line-height: 80px; 
+	margin-right: 40px;
+	cursor: pointer;
+	display: none;
+}	
+#check{
+	display: none;
+}
+
+@media(max-width: 858px){
+	.checkbtn{
+		display: block;
+		top: 30px;
+	}
+	.header .logo {
+		top: -53px;
+	}
+	.header .header-logo {
+		position: fixed;
+		line-height: 0px;
+		top: -25px;
+	}
+	nav{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		background: linear-gradient(-40deg, #23D5AB,#23A6D5 );
+		top: 70px;
+		left: -100%;
+		text-align: center;
+	}
+	a{
+		display: block;
+		margin: 60px 0;
+		margin-left: 40px;
+		line-height: 100px;
+		font-size: 17px;	
+		transition: all .5s;
+	}
+
+	a:hover {
+		background: #3C90C8;
+	}
+	button{
+		margin-left: 60px;
+	}
+
+	#check:checked ~ nav {
+		left: 0;
+	}
+
+}
+
+
+
 
 /*BANNER*/
 
-.banner .banner-image {
-	position: relative;
-
-	 
+.banner .banner-image  {
+	background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
+	background-size: cover;
+	padding-top: 30px;
+	padding-bottom: 0;
+	margin: 0px 0px;
+	height: 100vh;
+	width: 100%
 }
-
 .banner .banner-content{
+	font-family: 'Racing Sans One', cursive;
+	letter-spacing: 4px;
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	top: 50%
+	top: 8%;
 }
-.banner .banner-content h1,
-.banner .banner-content h2 {
+.banner .banner-content h1{
+	font-size: 65px;
+	letter-spacing: 3px;
 	color: #ffffff;
+}
+.banner .banner-content h2 {
+	font-size: 35px;
+	letter-spacing: 3px;
+	color: #ffffff;
+}
+.banner .banner-content button {
+	font-family: 'Racing Sans One', cursive;
+	font-size: 20px;
+	letter-spacing: 4px;
+	background-color: #3C90C8;
+
+}
+.banner .banner-content a {
+	font-family: 'Patua One', cursive;
+	font-style: italic;
+	letter-spacing: 1px;
+	font-size: 12px;
+	letter-spacing: 3px;
+	color: #ffffff;
+}
+
+@media(max-width: 858px){
+.banner .banner-content a {
+	background: none;
+	margin-right: 10%;
+}
+.banner .banner-content button {
+	margin-right: 10%;
+}
+.banner .banner-content h3 {
+	margin-top: -30%;
+	margin-right: -5%;
+}
 }
 
 /*
 ABOUT
 */
+
 .about .about-single-element .icon {
 	font-size: 60px;
 	text-align: center;
+	margin-top: 30px;
 }
 .about .about-single-element {
 	text-align: center;
@@ -73,29 +216,199 @@ ABOUT
 }
 
 .about .about-single-element p {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 700;
+	font-weight: bold;
+	letter-spacing: 2px;
 	text-align: left;
-	margin-top: 20px;
+	margin-top: 40px;
+	margin-left:40px;
+	line-height: 30px;
 }
+
+@media(max-width: 858px){
+.about .about-single-element p {
+	margin-right:40px;
+}
+}
+/*Articles & Press*/
+
+ h1 {
+	font-family: 'Racing Sans One', cursive;
+	letter-spacing: 4px;
+	font-size: 60px;
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom:30px; 
+}
+
+.container .tile .is-vertical .is-primary{
+	background: linear-gradient(-40deg, #23c8b7,#24d4ad);
+}
+
+.container .tile .is-vertical .is-warning{
+	background: linear-gradient(-40deg, #22c1bc,#23c8b7);
+}
+
+.container .tile .is-info{
+	background: linear-gradient(-40deg,#22b9c4, #23c8b7);
+}
+
+.container .tile .is-danger{
+	background: linear-gradient(-40deg, #24b1cc,#23c8b7);
+}
+
+.container .tile .is-success{
+	background: linear-gradient(-40deg,#23a8d3 ,#23bfbe);
+}
+
+.container .tile .title a{
+	font-family: 'Arial black',sans-serif;
+	letter-spacing: 4px;
+	font-size: 19px;
+	line-height: 30px;
+	color: #ffffff;
+}
+
+.container .tile .title a:hover {
+	color: #333333;
+}
+
+.container .tile .subtitle {
+	font-family: 'Cuprum', sans-serif;
+	font-size: 700;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-top: 10PX;
+	line-height: 30px;
+	color: #ffffff;
+}
+.container .tile .subtitle-2{
+	font-family: 'Cuprum', sans-serif;
+	letter-spacing: 1px;
+	margin-top: 0PX;
+	color: #ffffff;
+}
+
+
+
+/*Articles & Press*/
+
+
+/*Connexion */
+
+.connection-form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	height: 500px;
+	padding: 80px 40px;
+	background-color: #ffffff;
+	background: rgba(0,0,0,0.5);
+}
+
+.avatar{
+	position: absolute;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	top: calc(-80px/2);
+	left: 38%;
+}
+
+.connection-form h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-family: 'Racing Sans One', cursive;
+	letter-spacing: 4px;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.connection-form p{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-family: 'Patua One', cursive;
+	letter-spacing: 2px;
+	font-size: 15px;
+	color: #ffffff;
+}
+
+.connection-form input{
+	width: 100%;
+	margin-bottom: 20px;
+}
+.connection-form input[type=email], 
+.connection-form input[type=password] {
+	border: none;
+	border-bottom: 1px solid #ffffff;
+	background: transparent;
+	outline: none;
+	height: 35px;
+	font-family: 'Cuprum', sans-serif;
+	letter-spacing: 1px;
+	font-size: 15px;
+	color: #ffffff;
+}
+
+.connection-form input::placeholder {
+	color: #ffffff;
+	text-align: center;
+}
+
+
+.connection-form input[type=submit] {
+	height: 35px;
+	color: #ffffff;
+	font-size: 15px;
+	background: #3C90C8;
+	cursor: pointer;
+	border-radius: 25px;
+	border: none;
+	outline: none;
+	margin-top: 15%;
+	font-family: 'Patua One', cursive;
+	letter-spacing: 2px;
+	font-size: 15px;
+}
+
+.connection-form input[type=checkbox] {
+	width: 30px;
+}
+
+
+
 
 /*
 FOOTER
 */
 .footer .footer-information {
+	font-family: 'Patua One', cursive;
+	letter-spacing: 3px;
 	text-align: center;
-	margin-top: 30px;
-	margin-left: 400px;
+	margin-top:0;
+	margin-bottom: 0;
+	position: absolute;
+	left: 41%;
 }
 
 .footer .footer-information {
 	padding: 0;
+
 }
 
 .footer .footer-information {
 	display: inline-block;
 }
 
-.control {
-text-align: center;
-padding-top: 30px;
+@media(max-width: 858px){
+.footer .footer-information {
+	left: 15%;
 }
-
+}

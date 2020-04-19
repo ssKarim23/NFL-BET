@@ -8,33 +8,40 @@
 <body>
 
 <?php
-   if($_GET['dep']=="" || $_GET['codep']=="" || $_GET['statut']=="" || $_GET['mdp']!= $_GET['mdp1']|| $_GET['mail']==""|| $_GET['cond']=="")//si un des champs est vide
+
+echo "tra";
+   if($_GET['nom']=="" || $_GET['prenom']=="" || $_GET['pays']=="" || $_GET['email']==""|| $_GET['mdp']=="")//si un des champs est vide
+
    {//recharge la page en remplissant les champs remplis
-   	echo '<meta http-equiv="refresh" content="0; URL=../inscription/formulaire.php?dep='.$_GET['dep'].'&codep='.$_GET['codep'].'&statut='.$_GET['statut'].'&mail='.$_GET['mail'].'" />';
+    echo "baro";
+   	echo '<meta http-equiv="refresh" content="20; URL=formulaire.php?nom='.$_GET['nom'].'&prenom='.$_GET['prenom'].'&pays='.$_GET['pays'].'&email='.$_GET['email'].'&mdp='.$_GET['mdp'].'" />';
+
    }
 
 else
   {//sinon insere les infos du nouvel utilisateur dans la bd
-     INCLUDE('../main/bd.php');
+     INCLUDE('../main/donnee.php');
+     echo "ABDEL";
      $bdd=getBD();
-     echo "dep" .$_GET['dep'];
-     echo "codep" .$_GET['codep'];
-     echo "statut" .$_GET['statut'];
-     echo "mail" .$_GET['mail'];
+     echo "nom" .$_GET['nom'];
+     echo "prenom" .$_GET['prenom'];
+     echo "pays" .$_GET['pays'];
+     echo "email" .$_GET['email'];
      echo "mdp" .$_GET['mdp'];
 
-     $req='insert into utilisateur(departement,codepostal,statut,mail,mdp)
+     $req='insert into utilisateur(nom,prenom,pays,email,mdp,id_user)
      values(
-         '.$_GET['dep'].',
-         '.$_GET['codep'].',
-         "'.$_GET['statut'].'",
-         "'.$_GET['mail'].'",
-         "'.$_GET['mdp'].'"
+         "'.$_GET['nom'].'",
+         "'.$_GET['prenom'].'",
+         "'.$_GET['pays'].'",
+         "'.$_GET['email'].'",
+         "'.$_GET['mdp'].'", 0
        );';
+       echo "blallal";
 
        echo $req;
        $bdd->query($req);
-       echo '<meta http-equiv="refresh" content="0; URL=../main/index.php"/>';//redirige vers page index
+       echo '<meta http-equiv="refresh" content="20; URL=../main/index.html"/>';//redirige vers page index
    }
 ?>
 

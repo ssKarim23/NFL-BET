@@ -1,31 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8898
--- Generation Time: Apr 18, 2020 at 05:34 PM
--- Server version: 5.6.34-log
--- PHP Version: 7.2.1
+-- Hôte : localhost:8889
+-- Généré le :  Dim 19 avr. 2020 à 15:01
+-- Version du serveur :  5.7.23
+-- Version de PHP :  7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
--- Database: `projet nfl`
+-- Base de données :  `nfl`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nfl`
+-- Structure de la table `nfl`
 --
 
 CREATE TABLE `nfl` (
@@ -102,7 +94,7 @@ CREATE TABLE `nfl` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `nfl`
+-- Déchargement des données de la table `nfl`
 --
 
 INSERT INTO `nfl` (`Name`, `Team`, `Position`, `OVR`, `Age`, `College`, `AWR`, `THP`, `RET`, `LBK`, `STR`, `BCV`, `CIT`, `PAC`, `PUR`, `MRR`, `CTH`, `ACC`, `SPM`, `Height`, `FMV`, `SPC`, `RBK`, `TAK`, `INJ`, `ZCV`, `Weight`, `Birthday`, `DRR`, `YRS PRO`, `Salary`, `TRK`, `TAS`, `JKM`, `PRC`, `SRR`, `Jersey #`, `BSK`, `SPD`, `RBP`, `JMP`, `TGH`, `TOR`, `MCV`, `SFA`, `PMV`, `Version`, `RLS`, `POW`, `TAM`, `KAC`, `PBP`, `IBK`, `Portrait`, `STA`, `CAR`, `BTK`, `KPW`, `Handedness`, `TUP`, `Sign Bonus`, `PBK`, `PRS`, `TAD`, `BSH`, `RBF`, `AGI`, `ELU`, `PBF`, `primary key`) VALUES
@@ -2469,19 +2461,42 @@ INSERT INTO `nfl` (`Name`, `Team`, `Position`, `OVR`, `Age`, `College`, `AWR`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `utilisateur`
+-- Structure de la table `utilisateur`
 --
 
 CREATE TABLE `utilisateur` (
-  `nom` varchar(30) DEFAULT NULL,
-  `prenom` varchar(30) DEFAULT NULL,
-  `email` varchar(30) DEFAULT NULL,
-  `date_naissance` date DEFAULT NULL,
-  `pays` varchar(20) DEFAULT NULL,
-  `mdp` varchar(20) DEFAULT NULL
+  `nom` varchar(20) DEFAULT NULL,
+  `prenom` varchar(20) DEFAULT NULL,
+  `pays` text NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `mdp` varchar(50) NOT NULL,
+  `id_user` int(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Déchargement des données de la table `utilisateur`
+--
+
+INSERT INTO `utilisateur` (`nom`, `prenom`, `pays`, `email`, `mdp`, `id_user`) VALUES
+('s', 's', 'fr', 's@gmail.com', 'ss', 1),
+('s', 's', 'fr', 'k@gmail.com', 'ss', 2);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `utilisateur`
+--
+ALTER TABLE `utilisateur`
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

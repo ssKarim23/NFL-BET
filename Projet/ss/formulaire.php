@@ -4,9 +4,9 @@ session_start();
 
 <?php
 if (extension_loaded ('PDO')) {
-echo 'PDO OK'; 
+echo 'PDO OK';
 } else {
-echo 'PDO KO'; 
+echo 'PDO KO';
 }
 ?>
 
@@ -21,19 +21,19 @@ echo 'PDO KO';
 
 	<title>Inscription</title>
 	<div class="block">
-		
+
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
 	<link rel="stylesheet" type="text/css" href="../src/css/style.css">
 	<!--FONT-->
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/adbe6815a1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
 
 
-<div class="block"> 
+<div class="block">
 	<header class="header">
 		<a href="#" class="header-logo"> NFL BET </a>
 		<nav class="header-menu">
@@ -56,37 +56,39 @@ echo 'PDO KO';
 		<h1 class="title is-1">Inscription</h1>
 		<div class="footer-contact-form">
 			 <form  method="get" action="inscription.php" autocomplete="off" >
-			 	<div class="field">
+
+				<div class="field">
   					<label class="label">Nom</label>
 				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g Salah salah">
+				    <input class="input" name="nom" type="text" placeholder="e.g Salah salah" value="<?php if(isset($_GET['nom'])){echo $_GET['nom'];} ?>">
 				  </div>
 				</div>
 
 				<div class="field">
   					<label class="label">Prénom</label>
 				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g Karim">
+				    <input class="input" name="prenom" type="text" placeholder="e.g Karim" value="<?php if(isset($_GET['prenom'])){echo $_GET['prenom'];} ?>">
 				  </div>
 				</div>
 
 				<div class="field">
-  					<label class="label">Pays</label>
-				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g Karim">
-				  </div>
+						<label class="label">Pays</label>
+					<div class="control">
+						<input class="input" name="pays" type="text" placeholder="e.g Karim" value="<?php if(isset($_GET['pays'])){echo $_GET['pays'];} ?>">
+					</div>
 				</div>
 
-					<div class="field">
-  					<label class="label">email</label>
-				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g sskarim23@gmail.com">
-				  </div>
+				<div class="field">
+					<label class="label">Email</label>
+				<div class="control">
+					<input class="input" name="email" type="text" placeholder="e.g sskarim23@gmail.com" value="<?php if(isset($_GET['email'])){echo $_GET['email'];} ?>">
 				</div>
+			</div>
+
 					<div class="field">
   					<label class="label">Mot de passe</label>
 				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g ma requette est la suivante">
+				    <input class="input" name="mdp" type="text" placeholder="e.g ma requette est la suivante" value="<?php if(isset($_GET['mdp'])){echo $_GET['mdp'];} ?>">
 				    <div class="control">
 				    </div>
 				</div>
@@ -94,14 +96,14 @@ echo 'PDO KO';
 				    	<div class="field">
   					<label class="label">Confirmation du mot de passe</label>
 				  <div class="control">
-				    <input class="input" type="text" placeholder="e.g sskarim23@gmail.com">
+				    <input class="input" name="mdp1" type="text" placeholder="e.g sskarim23@gmail.com">
 				  </div>
 
 			 		<div class="control">
-					    
+
 					    <input type="Submit" name="krimou" value="sign up" >
 					</div>
-					
+
 					</div>
 
 				  </div>
