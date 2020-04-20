@@ -300,7 +300,7 @@ ABOUT
 
 .connection-form {
 	position: absolute;
-	top: 50%;
+	top: 58%;
 	left: 50%;
 	transform: translate(-50%,-50%);
 	width: 400px;
@@ -379,6 +379,7 @@ ABOUT
 }
 
 .connection-form input[type=checkbox] {
+
 	width: 30px;
 }
 
@@ -412,3 +413,29 @@ FOOTER
 	left: 15%;
 }
 }
+
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 10%
+}
+th, td {
+  padding: 0.25rem;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+tbody tr:nth-child(odd) {
+  background: #eee;
+}
+tbody tr:hover {
+  background: yellow;
+}
+
+@media(max-width: 858px){
+.banner .banner-image2 {
+	height: 90px;
+	bottom: -130px;
+}
+
+
